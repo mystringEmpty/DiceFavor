@@ -11,7 +11,7 @@ msg_reply.favor_tuner = {
     echo = function()
         local favor_add,rest = string.match(msg.fromMsg,"([%-]?%d+)[^%d]*(%d*)")
         local obj = string.match(rest or "","%d+") or msg.fromUser
-        favor = getUserConf(obj,"&favor_field",0) + (favor_add or 100)
+        local favor = getUserConf(obj,"&favor_field",0) + (favor_add or 100)
         setUserConf(obj,"&favor_field",favor)
         msg.favor = favor
         msg.obj = getUserConf(obj,"nick#"..(msg.fromGroup or ""),obj)
@@ -30,10 +30,11 @@ msg_reply.favor_develop = {
     },
     echo = function()
         local obj = string.match(msg.fromMsg,"%d+") or msg.fromUser
-        favor_add = loadLua("favor_develop")(obj)
+        local favor_add = loadLua("favor_develop")(obj)
         msg.obj = getUserConf(obj,"nick#"..(msg.fromGroup or ""),obj)
         if favor_add then
             msg.favor_add = favor_add
+            msg.favor = getUserConf(obj,"&favor_field")
             return "{reply_favor_developed}"
         else return "{reply_favor_undeveloped}" end
     end
@@ -88,7 +89,7 @@ msg_reply.favor_rename = {
 }
 msg_reply.favor_rename_percent = {
     keyword = {
-        prefix = { "好感百分比迁移" }
+        prefix = { "好感百分比迁移自" }
     },
     limit = {
         user_var = {

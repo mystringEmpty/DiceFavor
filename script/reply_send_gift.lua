@@ -19,7 +19,7 @@ if(today_gift >= daily_gift_limit)then
     return "够啦～{nick}今天已经送得太多了"
 end
 user_today.rcv_gifts = today_gift+1
-local gift = msg.suffix
+local gift = string.match(msg.suffix,"^[%s]*(.-)[%s]*$")
 if gift=="" then
     return "嗯？{nick}要送{self}什么？"
 end

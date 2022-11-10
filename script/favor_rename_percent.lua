@@ -1,5 +1,8 @@
 --从指定字段迁移数值至favor
-key = string.match(msg.fromMsg,"^[%s]*(.-)[%s]*$",#"好感迁移自"+1)
+local key = string.match(msg.suffix,"^[%s]*(.-)[%s]*$")
+if #key==0 then
+    return "请{self}指定好感度要从哪个字段迁移至favor×"
+end
 local cnt = 0
 for uid,favor in pairs(getUserConf(nil,key)) do
     setUserConf(uid,key)
