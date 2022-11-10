@@ -50,8 +50,11 @@ msg_reply.favor_rewrite = {
         lock = "favor",
     },
     echo = function()
-        local favor_new,rest = string.match(msg.fromMsg,"([%-]?%d+)[^%d]*(%d*)")
-        local obj = string.match(rest or "","%d+") or msg.fromUser
+        local favor_new,rest = string.match(msg.suffix,"([%-]?%d+)[^%d]*(%d*)")
+        if not favor_now or #favor_new==0 then
+            return "{reply_favor_value_empty}"
+        end
+        local obj = string.match(rest or "","%d+") or msg.uid
         msg.obj = getUserConf(obj,"nick#"..(msg.fromGroup or ""),obj)
         setUserConf(obj,"&favor_field",favor_new or 0)
         msg.favor = favor_new
