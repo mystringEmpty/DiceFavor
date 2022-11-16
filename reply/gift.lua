@@ -1,10 +1,20 @@
 msg_reply.send_gift = {
     keyword = {
-        prefix = {"送{strSelfNick}"}
+        prefix = {"{strPresentSpell}"}
     },
     limit = {
         cd = { user = 30 },
-        today = { user = 10 },
+        lock = "gifts",
     },
-    echo = { lua="reply_send_gift" }
+    echo = { lua = "gift.reply_send" }
+}
+msg_reply.demand_gift = {
+    keyword = {
+        prefix = {"{strDemandSpell}"}
+    },
+    limit = {
+        cd = { user = 30 },
+        lock = "gifts",
+    },
+    echo = { lua = "gift.reply_demand" }
 }

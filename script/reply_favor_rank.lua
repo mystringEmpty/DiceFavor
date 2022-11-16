@@ -1,6 +1,6 @@
-favors = getUserConf(nil,"&favor_field")
-rank = {}
-function printFavor(data)
+local favors = getUserConf(nil,"&favor_field")
+local rank = {}
+local function printFavor(data)
     return string.format("%.0f",data.favor).."~"..getUserConf(data.uid,"nick").."("..data.uid..")"
 end
 for uid,favor in pairs(favors) do
@@ -17,7 +17,7 @@ for uid,favor in pairs(favors) do
         end
     end
 end
-res = {}
+local res = {}
 for idx,data in ipairs(rank) do
     if idx>10 and data.favor<rank[10].favor then
         break
