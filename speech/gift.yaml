@@ -2,6 +2,8 @@ strPresentSpell: 送{strSelfNick}
 strDemandSpell: 向{strSelfNick}索取
 gift_send_daily_limit: "够啦～{nick}今天已经送得太多了"
 gift_demand_daily_limit: "够啦～{nick}今天已经索取得太多了"
+gift_demand_favor_limit: "这对{self}与{nick}的关系而言，还有点为时尚早了"
 gift_send_empty: "嗯？{nick}要送{self}什么？"
-gift_return_default: "不知道要回礼什么，就给{self}一个拥抱好了"
-gift_return_not_met: "抱歉，我这可能没有{self}想要的{gift}"
+gift_return_default: "不知道要回礼什么，就给{nick}一个拥抱好了"
+gift_return_not_met: "抱歉，我这可能没有{nick}想要的{gift}"
+gift_return_given: "那就还赠{nick}一份{ret_gift}吧"

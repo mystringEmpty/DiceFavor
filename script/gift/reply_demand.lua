@@ -18,11 +18,16 @@ if not next(list) then
 end
 local react = giftsp[gift]
 if(react)then
+    local favor = getUserConf(msg.uid,"&favor_field", 0)
     local cost = react.cost or 0
-    if(cost~=0)then
-        setUserConf(msg.uid,"&favor_field", getUserConf(msg.uid,"&favor_field", 0) - cost)
+    if favor < cost or favor < (react.favor_floor or 0) then
+        return react.reply_deny or "{gift_demand_favor_limit}"
     end
-    return react.reply
+    if cost~=0 then
+        setUserConf(msg.uid,"&favor_field",  - cost)
+    end
+    msg.ret_gift = gift
+    return react.reply or "{gift_return_given}"
 end
 msg.gift = gift
 return "{gift_return_not_met}"

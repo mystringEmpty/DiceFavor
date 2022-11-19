@@ -21,7 +21,7 @@ if not next(list) then
     list = loadLua("gift.init_present")
     giftsp:set(list)
 end
-local react = Giftsp[gift]
+local react = giftsp[gift]
 if(react)then
     local add_favor = react.favor or 1
     if(react.favor<0)then

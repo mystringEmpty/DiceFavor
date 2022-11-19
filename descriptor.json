@@ -1,8 +1,10 @@
 {
     "title":"恋色LoveDice",
-    "ver":"1.0.4(5)",
+    "ver":"1.0.5(6)",
     "author":"安研色Shiki",
     "dice_build":629,
+    "repo":"https://ghproxy.com/https://github.com/mystringEmpty/DiceFavor.git",
+	"pkg":"https://ghproxy.com/https://github.com/Dice-Developer-Team/DiceModIndex/releases/download/favor/DiceFavor.zip",
     "brief":"好感互动模块，包含好感读写、编辑、成长等",
     "comment":"如安装本模块前已有好感度系统，请将speech/favor_title.yaml中的favor词条改为原先使用的好感度字段，或使用好感迁移指令",
     "helpdoc":{
