@@ -21,10 +21,11 @@ if(react)then
     local favor = getUserConf(msg.uid,"&favor_field", 0)
     local cost = react.cost or 0
     if favor < cost or favor < (react.favor_floor or 0) then
+        if react.cost_deny then setUserConf(msg.uid,"&favor_field", favor - react.cost_deny) end
         return react.reply_deny or "{gift_demand_favor_limit}"
     end
     if cost~=0 then
-        setUserConf(msg.uid,"&favor_field",  - cost)
+        setUserConf(msg.uid,"&favor_field", favor - cost)
     end
     msg.ret_gift = gift
     return react.reply or "{gift_return_given}"
