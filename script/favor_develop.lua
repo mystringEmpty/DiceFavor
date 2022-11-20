@@ -1,5 +1,5 @@
 --默认机制：D[max]>当前好感或=[max]时成长X或XDY或自定义函数
-function favor_develop(uid,max,exp) --#2要求为正数或空缺；#3要求为整数或“XDY”或function
+local function favor_develop(uid,max,exp) --#2要求为正数或空缺；#3要求为整数或“XDY”或function
     local face = max or 100
     local roll = ranint(1,face)
     local favor = getUserConf(uid,"&favor_field",0)

@@ -33,10 +33,15 @@ if(react)then
     end
     self_today_gift = self_today_gift+1
     my_today.gifts = self_today_gift
-    return react.reply.."\n今日收礼:"..string.format("%d",self_today_gift).."件"
+    msg.rcv_today = self_today_gift
+    return react.reply.."{gift_send_today_stat}"
 end
+local refuse = Gift.refuse_default  --拒绝来路不明
+msg.gift = gift
+if refuse then return "{gift_send_deny_default}" end
 if gift_favor_limit>favor then loadLua("favor_develop")(msg.uid,gift_favor_limit,1) end
 self_today_gift = self_today_gift+1
 my_today.gifts = self_today_gift
+msg.rcv_today = self_today_gift
 Gift.rcv_total = (Gift.rcv_total or 0) + 1
-return "谢谢{nick}送的"..gift.."~\n今日收礼:"..string.format("%d",self_today_gift).."件"
+return "gift_send_accept_default"
