@@ -38,10 +38,10 @@ if(react)then
 end
 local refuse = Gift.refuse_default  --拒绝来路不明
 msg.gift = gift
-if refuse then return "{gift_send_deny_default}" end
+if refuse then return "{gift_send_refuse_default}" end
 if gift_favor_limit>favor then loadLua("favor_develop")(msg.uid,gift_favor_limit,1) end
 self_today_gift = self_today_gift+1
 my_today.gifts = self_today_gift
 msg.rcv_today = self_today_gift
 Gift.rcv_total = (Gift.rcv_total or 0) + 1
-return "gift_send_accept_default"
+return "{gift_send_accept_default}"
