@@ -21,14 +21,14 @@ if not next(list) then
     giftsp:set(list)
 end
 local react = list[gift]
-if(react)then
+if react then
     local add_favor = react.favor or 1
     if(add_favor<0)then
         setUserConf(msg.uid, "&favor_field", favor + add_favor)
     elseif(ranint(1,gift_favor_limit)>favor)then
         setUserConf(msg.uid, "&favor_field", math.min(gift_favor_limit,favor + add_favor))
     end
-    if(react.refuse)then
+    if react.refuse then
         return react.reply
     end
     self_today_gift = self_today_gift+1

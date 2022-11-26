@@ -56,7 +56,7 @@ msg_reply.favor_rewrite = {
         end
         local obj = string.match(rest or "","%d+") or msg.uid
         msg.obj = getUserConf(obj,"nick#"..(msg.fromGroup or ""),obj)
-        setUserConf(obj,"&favor_field",favor_new or 0)
+        setUserConf(obj,"&favor_field",tonumber(favor_new) or 0)
         msg.favor = favor_new
         return "{reply_favor_rewrite}"
     end

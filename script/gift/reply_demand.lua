@@ -16,8 +16,8 @@ if not next(list) then
     list = loadLua("gift.init_return")
     giftsp:set(list)
 end
-local react = giftsp[gift]
-if(react)then
+local react = list[gift]
+if react then
     local favor = getUserConf(msg.uid,"&favor_field", 0)
     local cost = react.cost or 0
     if favor < cost or favor < (react.favor_floor or 0) then
