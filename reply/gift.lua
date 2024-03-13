@@ -3,7 +3,10 @@ msg_reply.send_gift = {
         prefix = {"{strPresentSpell}"}
     },
     limit = {
-        cd = { user = 30 },
+        cd = {
+            user = 30,
+            echo = "{gift_send_colding}"
+        },
         lock = "gifts",
     },
     echo = { lua = "gift.reply_send" }
@@ -13,7 +16,10 @@ msg_reply.demand_gift = {
         prefix = {"{strDemandSpell}"}
     },
     limit = {
-        cd = { user = 30 },
+        cd = {
+            user = 30,
+            echo = "{gift_demand_colding}"
+        },
         lock = "gifts",
     },
     echo = { lua = "gift.reply_demand" }

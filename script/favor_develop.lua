@@ -3,7 +3,7 @@ local function favor_develop(uid,max,exp) --#2要求为正数或空缺；#3要�
     local face = max or 100
     local roll = ranint(1,face)
     local favor = getUserConf(uid,"&favor_field",0)
-    log("当前好感"..favor)
+    log(uid.."当前好感"..favor)
     if roll<=favor and roll~=face then return end
     if type(exp)=="number" then
         setUserConf(uid,"&favor_field",favor+exp)

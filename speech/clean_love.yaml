@@ -1,4 +1,4 @@
-reply_favor_show: "{self}对{nick}的{favor_title}有{user.favor}[CQ:emoji,id=9825]"
+reply_favor_show: "{self}对{nick}的{favor_title}有{favor}[CQ:emoji,id=9825]"
 reply_favor_show_nil: "{self}对{nick}并无{favor_title}！"
 reply_favor_rank: "当前{self}的好感排名如下：\n{ranking}"
 reply_favor_tuner: "指令——通过——\n主人已将{self}对{obj}的{favor_title}调整为了{favor}[CQ:emoji,id=9825]"

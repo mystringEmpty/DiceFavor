@@ -1,7 +1,9 @@
 strPresentSpell: 送{strSelfNick}
 strDemandSpell: 向{strSelfNick}索取
+gift_send_colding: "够啦～{nick}送得太快，{self}已经收不过来了"
 gift_send_daily_limit: "够啦～{nick}今天已经送得太多了"
-gift_demand_daily_limit: "够啦～{nick}今天已经索取得太多了"
+gift_demand_colding: "够啦！{nick}也要得太急了"
+gift_demand_daily_limit: "够啦！{nick}今天已经索取得太多了"
 gift_demand_favor_limit: "这对{self}与{nick}的关系而言，还有点为时尚早了"
 gift_send_empty: "嗯？{nick}要送{self}什么？"
 gift_send_refuse_default: "承蒙好意，来路不明的礼物，{self}就不收下这{gift}啦"
