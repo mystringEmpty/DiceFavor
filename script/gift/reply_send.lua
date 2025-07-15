@@ -16,7 +16,7 @@ local self_today_gift = my_today.gifts or 0
 local favor = getUserConf(msg.uid, "&favor_field", 0)
 local giftsp = getSelfData("gift/special_present.json")
 local list = giftsp:get()
-if not next(list) then
+if (not list) or (not next(list)) then
     list = loadLua("gift.init_present")
     giftsp:set(list)
 end

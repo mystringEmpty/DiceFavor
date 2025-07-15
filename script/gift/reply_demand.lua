@@ -12,7 +12,7 @@ if #gift==0 then
 end
 local giftsp = getSelfData("gift/special_return.json")
 local list = giftsp:get()
-if not next(list) then
+if (not list) or not next(list) then
     list = loadLua("gift.init_return")
     giftsp:set(list)
 end
